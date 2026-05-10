@@ -340,6 +340,44 @@
       gap: 10px; margin-bottom: 22px;
     }
 
+
+    /* ── FEHLER-MARKIERUNG ── */
+    .form-group input.error,
+    .form-group select.error {
+      border-color: #e53e3e !important;
+      box-shadow: 0 0 0 3px rgba(229,62,62,0.12) !important;
+      background: #fff8f8 !important;
+    }
+    .form-group input.error::placeholder { color: #e53e3e; }
+
+    .radio-group.error .radio-chip,
+    .radio-group.error .radio-chip:hover {
+      border-color: #e53e3e;
+    }
+    .radio-group.error {
+      outline: 2px solid #e53e3e;
+      outline-offset: 4px;
+      border-radius: 10px;
+    }
+
+    .error-msg {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #e53e3e;
+      letter-spacing: 0.3px;
+    }
+
+    .phone-group-error {
+      border: 2px solid #e53e3e;
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff8f8;
+      margin-bottom: 22px;
+    }
+    .phone-group-error .error-msg { margin-top: 8px; }
+
     /* ── CONFIRM CHECKBOX ── */
     .confirm-box {
       background: var(--blue-pale);
@@ -857,42 +895,122 @@ document.addEventListener('click', e => {
   if (!e.target.closest('.lang-switcher')) closeLang();
 });
 
+// ── Helpers ──────────────────────────────────────────────────────────────────
+  function clearErrors(f) {
+    f.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    f.querySelectorAll('.error-msg').forEach(el => el.remove());
+    f.querySelectorAll('.phone-group-error').forEach(el => {
+      el.classList.remove('phone-group-error');
+    });
+  }
+
+  function markError(el, msg) {
+    el.classList.add('error');
+    // Remove existing error msg if any
+    const existing = el.parentNode.querySelector('.error-msg');
+    if (existing) existing.remove();
+    const span = document.createElement('span');
+    span.className = 'error-msg';
+    span.textContent = msg || 'Dieses Feld ist erforderlich.';
+    el.parentNode.appendChild(span);
+  }
+
+  function markRadioError(groupEl, msg) {
+    groupEl.classList.add('error');
+    const existing = groupEl.parentNode.querySelector('.error-msg');
+    if (existing) existing.remove();
+    const span = document.createElement('span');
+    span.className = 'error-msg';
+    span.textContent = msg || 'Bitte eine Option auswählen.';
+    groupEl.parentNode.appendChild(span);
+  }
+
 // ── Form submit (Formspree) ──────────────────────────────────────────────────
   document.getElementById('anmeldung-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const f = this;
+    clearErrors(f);
+
     const get = name => {
       const el = f.querySelector(`[name="${name}"]`);
       return el ? el.value.trim() : '';
     };
+    const getRadio = name => {
+      const el = f.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : '';
+    };
 
-    // Validate: at least one phone number required
+    let hasError = false;
+
+    // ── Required text/date fields ──
+    const requiredFields = [
+      { name: 'vorname',     msg: 'Vorname ist erforderlich.' },
+      { name: 'nachname',    msg: 'Nachname ist erforderlich.' },
+      { name: 'geburtsdatum',msg: 'Geburtsdatum ist erforderlich.' },
+      { name: 'sprache',     msg: 'Bitte Sprache angeben.' },
+      { name: 'email',       msg: 'E-Mail-Adresse ist erforderlich.' },
+      { name: 'strasse',     msg: 'Straße ist erforderlich.' },
+      { name: 'hausnummer',  msg: 'Hausnummer ist erforderlich.' },
+      { name: 'plz',         msg: 'PLZ ist erforderlich.' },
+      { name: 'ort',         msg: 'Ort ist erforderlich.' },
+    ];
+
+    requiredFields.forEach(({ name, msg }) => {
+      const el = f.querySelector(`[name="${name}"]`);
+      if (el && !el.value.trim()) {
+        markError(el, msg);
+        hasError = true;
+      }
+    });
+
+    // ── Geschlecht (radio) ──
+    if (!getRadio('geschlecht')) {
+      const group = f.querySelector('.radio-group');
+      markRadioError(group, 'Bitte Geschlecht auswählen.');
+      hasError = true;
+    }
+
+    // ── Telefon: mindestens eines ──
     const mobilVal = get('telefon');
     const festnetzVal = get('festnetz');
     if (!mobilVal && !festnetzVal) {
-      alert('Bitte gib mindestens eine Telefonnummer an (Mobil oder Festnetz).');
-      f.querySelector('[name="telefon"]').focus();
+      const phoneRow = f.querySelector('[name="telefon"]').closest('.form-row');
+      if (phoneRow) {
+        phoneRow.classList.add('phone-group-error');
+        const existing = phoneRow.querySelector('.error-msg');
+        if (!existing) {
+          const span = document.createElement('span');
+          span.className = 'error-msg';
+          span.textContent = 'Bitte mindestens eine Telefonnummer angeben.';
+          phoneRow.appendChild(span);
+        }
+      } else {
+        const telEl = f.querySelector('[name="telefon"]');
+        markError(telEl, 'Bitte mindestens eine Telefonnummer angeben.');
+      }
+      hasError = true;
+    }
+
+    // ── If errors: scroll to first red field ──
+    if (hasError) {
+      const firstError = f.querySelector('.error, .phone-group-error, .radio-group.error');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
+
+    // ── Submit button loading state ──
+    const btn = f.querySelector('.btn-submit');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '⏳ &nbsp; Wird gesendet...';
+    btn.style.background = '#5a9bd4';
 
     const klassen = [...f.querySelectorAll('input[name="klasse"]:checked')]
       .map(cb => cb.value).join(', ') || 'Keine Auswahl';
 
     const erweiterungen = [...f.querySelectorAll('input[name="erweiterung"]:checked')]
       .map(cb => cb.value).join(', ') || 'Keine';
-
-    const getRadio = name => {
-      const el = f.querySelector(`input[name="${name}"]:checked`);
-      return el ? el.value : 'Keine Angabe';
-    };
-
-    // Submit button loading state
-    const btn = f.querySelector('.btn-submit');
-    const originalText = btn.innerHTML;
-    btn.disabled = true;
-    btn.innerHTML = '⏳ &nbsp; Wird gesendet...';
-    btn.style.background = '#5a9bd4';
 
     const formData = {
       _subject: 'Neue Anmeldung – ' + get('vorname') + ' ' + get('nachname'),
@@ -910,7 +1028,7 @@ document.addEventListener('click', e => {
       Email: get('email'),
       Strasse: get('strasse') + ' ' + get('hausnummer'),
       PLZ_Ort: get('plz') + ' ' + get('ort'),
-      Sehhilfe: getRadio('sehhilfe'),
+      Sehhilfe: getRadio('sehhilfe') || 'Keine Angabe',
       Fuehrerscheinklassen: klassen,
       Erweiterungen: erweiterungen,
     };
@@ -929,6 +1047,7 @@ document.addEventListener('click', e => {
         successBox.style.display = 'block';
         successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         f.reset();
+        clearErrors(f);
       } else {
         const data = await res.json();
         throw new Error(data.error || 'Serverfehler');
@@ -938,6 +1057,45 @@ document.addEventListener('click', e => {
       btn.innerHTML = originalText;
       btn.style.background = '';
       alert('Fehler beim Senden. Bitte ruf uns direkt an: 030 / 629 013 31');
+    }
+  });
+
+  // ── Live-Fehlerbereinigung: Rot-Markierung entfernen sobald Feld ausgefüllt ──
+  document.getElementById('anmeldung-form').addEventListener('input', function(e) {
+    const el = e.target;
+    if (el.classList.contains('error') && el.value.trim()) {
+      el.classList.remove('error');
+      const msg = el.parentNode.querySelector('.error-msg');
+      if (msg) msg.remove();
+    }
+  });
+  document.getElementById('anmeldung-form').addEventListener('change', function(e) {
+    const el = e.target;
+    // Radio: remove error from group
+    if (el.type === 'radio') {
+      const group = el.closest('.radio-group');
+      if (group) {
+        group.classList.remove('error');
+        const msg = group.parentNode.querySelector('.error-msg');
+        if (msg) msg.remove();
+      }
+    }
+    // Phone: remove error if one is filled
+    if (el.name === 'telefon' || el.name === 'festnetz') {
+      const f = document.getElementById('anmeldung-form');
+      const mob = f.querySelector('[name="telefon"]').value.trim();
+      const fest = f.querySelector('[name="festnetz"]').value.trim();
+      if (mob || fest) {
+        const phoneRow = f.querySelector('[name="telefon"]').closest('.form-row');
+        if (phoneRow) {
+          phoneRow.classList.remove('phone-group-error');
+          const msg = phoneRow.querySelector('.error-msg');
+          if (msg) msg.remove();
+        }
+        f.querySelector('[name="telefon"]').classList.remove('error');
+        const telMsg = f.querySelector('[name="telefon"]').parentNode.querySelector('.error-msg');
+        if (telMsg) telMsg.remove();
+      }
     }
   });
 </script>
