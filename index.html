@@ -1141,7 +1141,7 @@
       <div class="klasse-icon-wrap">🏍️</div>
       <div class="klasse-badge" data-i18n="klassen.a.badge">Klasse A / A2 / A1</div>
       <div class="klasse-name" data-i18n="klassen.a.name">Motorradführerschein</div>
-      <p class="klasse-desc" data-i18n="klassen.a.desc">Motorradausbildung für alle Stufen: A1 ab 16 J., A2 ab 18 J. (max. 35 kW), A80 ab 21 J. nach 2 Jahren A2, Klasse A (unbegrenzt) ab 24 J. Direkteinstieg.</p>
+      <p class="klasse-desc" data-i18n="klassen.a.desc">Motorradausbildung für alle Stufen: A1 ab 16 J., A2 ab 18 J. (max. 35 kW), A80 ab 21 J. (Direkteinstieg oder nach A1 mit Aufstieg über A2), Klasse A (unbegrenzt) ab 24 J. Direkteinstieg.</p>
       <span class="klasse-more" data-i18n="klassen.more">Mehr erfahren</span>
     </div>
     <div class="klasse-card" onclick="openKlasse('sonder')">
@@ -1173,7 +1173,7 @@
       <div class="klasse-icon-wrap">🩺</div>
       <div class="klasse-badge" data-i18n="klassen.erste.badge">Pflicht</div>
       <div class="klasse-name" data-i18n="klassen.erste.name">Erste Hilfe & Sehtest</div>
-      <p class="klasse-desc" data-i18n="klassen.erste.desc">Erste-Hilfe-Kurs und Sehtest direkt bei uns – alles aus einer Hand für deine Führerscheinanmeldung.</p>
+      <p class="klasse-desc" data-i18n="klassen.erste.desc">Erste-Hilfe-Kurs (bei Aufsteigern nicht erneut benötigt) und Sehtest direkt bei uns – alles aus einer Hand. Beides kann bei uns absolviert werden.</p>
       <span class="klasse-more" data-i18n="klassen.more">Mehr erfahren</span>
     </div>
   </div>
@@ -1237,6 +1237,18 @@
         <div class="staerken-num">03</div>
         <div class="staerken-text"><h4 data-i18n="staerken.3.title">Flexible Kurszeiten</h4><p data-i18n="staerken.3.desc">Abendkurse dreimal wöchentlich – jederzeit einsteigen, ganz ohne festen Starttermin.</p></div>
       </div>
+      <div class="staerken-item">
+        <div class="staerken-num">04</div>
+        <div class="staerken-text"><h4 data-i18n="staerken.4.title">Flexible Fahrstunden</h4><p data-i18n="staerken.4.desc">Wir bieten flexible Fahrstunden an – angepasst an deinen Alltag und deine Verfügbarkeit, ohne starre Vorgaben.</p></div>
+      </div>
+      <div class="staerken-item">
+        <div class="staerken-num">05</div>
+        <div class="staerken-text"><h4 data-i18n="staerken.5.title">Kaffee & Tee inklusive</h4><p data-i18n="staerken.5.desc">Bei uns ist Kaffee und Tee kostenlos für alle – weil eine entspannte Atmosphäre zum guten Lernen dazugehört.</p></div>
+      </div>
+      <div class="staerken-item">
+        <div class="staerken-num">06</div>
+        <div class="staerken-text"><h4 data-i18n="staerken.6.title">Transparent & seriös</h4><p data-i18n="staerken.6.desc">Keine versteckten Kosten, keine leeren Versprechen – bei uns weißt du immer, woran du bist.</p></div>
+      </div>
 
     </div>
     <div class="staerken-aside">
@@ -1258,7 +1270,7 @@
         <h4 data-i18n="staerken.hours.title">Öffnungszeiten</h4>
         <div class="hours-row"><span data-i18n="staerken.hours.mofr">Montag – Freitag</span><span>10:00 – 18:00</span></div>
         <div class="hours-row"><span data-i18n="staerken.hours.sa">Samstag</span><span>10:00 – 13:00</span></div>
-        <div class="hours-row"><span data-i18n="staerken.hours.so">Sonntag</span><span data-i18n="staerken.hours.closed">Geschlossen</span></div>
+        <div class="hours-row"><span data-i18n="staerken.hours.so">Sonntag & Feiertags</span><span data-i18n="staerken.hours.closed">Geschlossen</span></div>
       </div>
     </div>
   </div>
@@ -1915,7 +1927,7 @@ const klassenData = {
     badge: { de:'Klasse A / A2 / A1', en:'Class A / A2 / A1', tr:'Sınıf A / A2 / A1', ar:'فئة A / A2 / A1' },
     title: { de:'Motorradführerschein', en:'Motorcycle Licence', tr:'Motosiklet Ehliyeti', ar:'رخصة الدراجة النارية' },
     about: {
-      de: 'Wir bieten alle Motorrad-Führerscheinklassen an: A1 (ab 16 J., bis 11 kW), A2 (ab 18 J., bis 35 kW), A80 (ab 21 J. nach 2 Jahren A2, bis 80 kW) sowie Klasse A unbegrenzt (ab 24 J. Direkteinstieg oder ab 21 J. via A2-Aufstieg). Bei uns wirst du professionell ausgebildet – auf modernen Motorrädern und einem eigenen Übungsplatz.',
+      de: 'Wir bieten alle Motorrad-Führerscheinklassen an: A1 (ab 16 J., bis 11 kW), A2 (ab 18 J., bis 35 kW), A80 (ab 21 J. – Direkteinstieg oder nach A1 mit Aufstieg über A2, bis 80 kW) sowie Klasse A unbegrenzt (ab 24 J. Direkteinstieg oder nach 2 Jahren A2). Bei uns wirst du professionell ausgebildet – auf modernen Motorrädern und einem eigenen Übungsplatz.',
       en: 'We offer all motorcycle licence classes: A1 (from 16, up to 11 kW), A2 (from 18, up to 35 kW), A80 (from 21 after 2 years A2, up to 80 kW), and full Class A (unlimited, from 24 direct or 21 via A2). Professional training on modern motorcycles.',
       tr: 'Tüm motosiklet ehliyet sınıflarını sunuyoruz: A1 (16\'dan itibaren, 11 kW\'a kadar), A2 (18\'den itibaren, 35 kW\'a kadar), A80 (A2\'den 2 yıl sonra 21\'den itibaren, 80 kW\'a kadar) ve sınırsız A sınıfı (24\'ten itibaren doğrudan).',
       ar: 'نقدم جميع فئات رخصة الدراجة النارية: A1 (من 16 سنة، حتى 11 كيلوواط)، A2 (من 18 سنة، حتى 35 كيلوواط)، A80 (من 21 سنة بعد سنتين A2، حتى 80 كيلوواط)، وفئة A غير محدودة (من 24 سنة مباشرة).'
@@ -1924,25 +1936,25 @@ const klassenData = {
       de: [
         { label: 'A1 Mindestalter', value: '16 Jahre (11 kW)' },
         { label: 'A2 Mindestalter', value: '18 Jahre (35 kW)' },
-        { label: 'A80 Aufstieg', value: '21 Jahre nach 2J. A2' },
+        { label: 'A80 Aufstieg', value: '21 Jahre (A80) oder nach A1 Besitz Aufstieg zum A2' },
         { label: 'Klasse A', value: 'ab 24 J. (unbegrenzt)' }
       ],
       en: [
         { label: 'A1 min. age', value: '16 years (11 kW)' },
         { label: 'A2 min. age', value: '18 years (35 kW)' },
-        { label: 'A80 upgrade', value: '21 years after 2y A2' },
+        { label: 'A80 upgrade', value: '21 Jahre (A80) oder nach A1 Besitz Aufstieg zum A2' },
         { label: 'Class A', value: 'from 24 (unlimited)' }
       ],
       tr: [
         { label: 'A1 minimum yaş', value: '16 yaş (11 kW)' },
         { label: 'A2 minimum yaş', value: '18 yaş (35 kW)' },
-        { label: 'A80 yükseltme', value: '2 yıl A2 sonrası 21 yaş' },
+        { label: 'A80 yükseltme', value: '21 Jahre (A80) oder nach A1 Besitz Aufstieg zum A2' },
         { label: 'A sınıfı', value: '24\'ten itibaren (sınırsız)' }
       ],
       ar: [
         { label: 'الحد الأدنى A1', value: '16 سنة (11 كيلوواط)' },
         { label: 'الحد الأدنى A2', value: '18 سنة (35 كيلوواط)' },
-        { label: 'الترقية A80', value: '21 سنة بعد سنتين A2' },
+        { label: 'الترقية A80', value: '21 Jahre (A80) oder nach A1 Besitz Aufstieg zum A2' },
         { label: 'فئة A', value: 'من 24 سنة (غير محدودة)' }
       ]
     },
@@ -2076,10 +2088,10 @@ const klassenData = {
       ]
     },
     steps: {
-      de: ['Kostenlose Beratung – Sprache wählen', 'Anmeldung & Unterlagen einreichen', 'Theorieunterricht in deiner Sprache', 'Fahrstunden mit mehrsprachigem Fahrlehrer', 'Theorieprüfung (auf Wunsch mit Übersetzungshilfe)', 'Praktische Prüfung bestehen'],
-      en: ['Free consultation – choose your language', 'Register & submit documents', 'Theory lessons in your language', 'Driving lessons with multilingual instructor', 'Theory exam (translation support available)', 'Pass practical exam'],
-      tr: ['Ücretsiz danışma – dilini seç', 'Kayıt & belgeleri teslim et', 'Kendi dilinde teori dersleri', 'Çok dilli öğretmenle sürüş dersleri', 'Teori sınavı (gerekirse çeviri desteğiyle)', 'Pratik sınavı geç'],
-      ar: ['استشارة مجانية – اختر لغتك', 'التسجيل وتقديم الوثائق', 'دروس النظري بلغتك', 'دروس قيادة مع مدرب متعدد اللغات', 'اختبار النظري (مع دعم ترجمة إن لزم)', 'اجتياز الاختبار العملي']
+      de: ['Kostenlose Beratung – Sprache wählen', 'Anmeldung & Unterlagen einreichen oder direkt vor Ort anmelden', 'Theorieunterricht in deiner Sprache', 'Fahrstunden mit mehrsprachigem Fahrlehrer', 'Theorieprüfung (auf Wunsch mit Übersetzungshilfe)', 'Praktische Prüfung bestehen'],
+      en: ['Free consultation – choose your language', 'Register & submit documents or register directly on-site', 'Theory lessons in your language', 'Driving lessons with multilingual instructor', 'Theory exam (translation support available)', 'Pass practical exam'],
+      tr: ['Ücretsiz danışma – dilini seç', 'Kayıt & belgeleri teslim et veya doğrudan yerinde kayıt ol', 'Kendi dilinde teori dersleri', 'Çok dilli öğretmenle sürüş dersleri', 'Teori sınavı (gerekirse çeviri desteğiyle)', 'Pratik sınavı geç'],
+      ar: ['استشارة مجانية – اختر لغتك', 'التسجيل وتقديم الوثائق أو التسجيل مباشرةً في الموقع', 'دروس النظري بلغتك', 'دروس قيادة مع مدرب متعدد اللغات', 'اختبار النظري (مع دعم ترجمة إن لزم)', 'اجتياز الاختبار العملي']
     }
   },
   sonder: {
@@ -2119,10 +2131,10 @@ const klassenData = {
       ]
     },
     steps: {
-      de: ['Kostenlose Beratung bei Fahrschule Nazar', 'Bisherige Ausbildungsunterlagen mitbringen (bei Wechslern)', 'Individuelle Einschätzung des Fahrkönnens', 'Fehlende Pflichtstunden und Unterricht nachholen', 'Bei Umschreibung: Unterlagen beim Straßenverkehrsamt einreichen', 'Auffrischungsstunden nach Bedarf', 'Prüfung ablegen oder direkt losfahren'],
-      en: ['Free consultation at Fahrschule Nazar', 'Bring existing training documents (if transferring)', 'Individual assessment of driving ability', 'Complete missing mandatory hours', 'For conversion: submit documents to traffic authority', 'Refresher lessons as needed', 'Take exam or start driving directly'],
-      tr: ['Fahrschule Nazar\'da ücretsiz danışma', 'Mevcut eğitim belgelerini getir (geçiş yapıyorsan)', 'Bireysel sürüş becerisi değerlendirmesi', 'Eksik zorunlu saatleri tamamla', 'Dönüştürme için: belgeleri trafik dairesine teslim et', 'İhtiyaç duyulan tazeleme dersleri', 'Sınav al veya doğrudan sürmeye başla'],
-      ar: ['استشارة مجانية في Fahrschule Nazar', 'إحضار وثائق التدريب الحالية (عند التحويل)', 'تقييم فردي لمهارات القيادة', 'إكمال الساعات الإلزامية الناقصة', 'للتحويل: تقديم الوثائق لسلطة المرور', 'دروس تنشيطية حسب الحاجة', 'أداء الاختبار أو البدء في القيادة مباشرة']
+      de: ['Kostenlose Beratung bei Fahrschule Nazar', 'Bisherige Ausbildungsunterlagen mitbringen (bei Wechslern)', 'Individuelle Einschätzung des Fahrkönnens', 'Eventuelle fehlende Pflichtstunden und Unterricht nachholen', 'Bei Umschreibung: Unterlagen beim Straßenverkehrsamt einreichen', 'Auffrischungsstunden nach Bedarf', 'Prüfung ablegen oder direkt losfahren'],
+      en: ['Free consultation at Fahrschule Nazar', 'Bring existing training documents (if transferring)', 'Individual assessment of driving ability', 'Eventual missing mandatory hours and theory lessons to complete', 'For conversion: submit documents to traffic authority', 'Refresher lessons as needed', 'Take exam or start driving directly'],
+      tr: ['Fahrschule Nazar\'da ücretsiz danışma', 'Mevcut eğitim belgelerini getir (geçiş yapıyorsan)', 'Bireysel sürüş becerisi değerlendirmesi', 'Varsa eksik zorunlu saatleri ve dersleri tamamla', 'Dönüştürme için: belgeleri trafik dairesine teslim et', 'İhtiyaç duyulan tazeleme dersleri', 'Sınav al veya doğrudan sürmeye başla'],
+      ar: ['استشارة مجانية في Fahrschule Nazar', 'إحضار وثائق التدريب الحالية (عند التحويل)', 'تقييم فردي لمهارات القيادة', 'إكمال الساعات الإلزامية والدروس الناقصة إن وجدت', 'للتحويل: تقديم الوثائق لسلطة المرور', 'دروس تنشيطية حسب الحاجة', 'أداء الاختبار أو البدء في القيادة مباشرة']
     }
   },
   erste: {
@@ -2137,35 +2149,35 @@ const klassenData = {
     },
     facts: {
       de: [
-        { label: 'Erste-Hilfe-Kurs', value: '9 Einheiten (~8 Std.)' },
+        { label: 'Erste-Hilfe-Kurs', value: '9 Einheiten (je 45 Min.)' },
         { label: 'Sehtest', value: 'direkt bei uns vor Ort' },
         { label: 'Gültigkeit Sehtest', value: '2 Jahre' },
         { label: 'Kosten EH-Kurs', value: 'ca. 25–35 €' }
       ],
       en: [
-        { label: 'First aid course', value: '9 units (~8 hrs)' },
+        { label: 'First aid course', value: '9 units (45 min. each)' },
         { label: 'Eye test', value: 'directly at our school' },
         { label: 'Eye test validity', value: '2 years' },
         { label: 'First aid cost', value: 'approx. €25–35' }
       ],
       tr: [
-        { label: 'İlk yardım kursu', value: '9 birim (~8 saat)' },
+        { label: 'İlk yardım kursu', value: '9 birim (her biri 45 dk.)' },
         { label: 'Göz testi', value: 'doğrudan bizde' },
         { label: 'Göz testi geçerliliği', value: '2 yıl' },
         { label: 'İlk yardım maliyeti', value: 'yakl. 25–35 €' }
       ],
       ar: [
-        { label: 'دورة الإسعافات الأولية', value: '9 وحدات (~8 ساعات)' },
+        { label: 'دورة الإسعافات الأولية', value: '9 وحدات (45 دقيقة لكل وحدة)' },
         { label: 'فحص النظر', value: 'مباشرةً لدينا' },
         { label: 'صلاحية فحص النظر', value: 'سنتان' },
         { label: 'تكلفة الإسعافات', value: 'حوالي 25–35 €' }
       ]
     },
     steps: {
-      de: ['Sehtest direkt bei uns vor Ort machen', 'Erste-Hilfe-Kurs buchen (wir helfen dir dabei)', 'Kurs-Bescheinigung aufbewahren', 'Beide Nachweise bei der Fahrschule einreichen', 'Mit der Fahrausbildung beginnen'],
-      en: ['Eye test directly at our driving school', 'Book first aid course (we can help)', 'Keep the course certificate', 'Submit both certificates to driving school', 'Begin driver training'],
-      tr: ['Göz testini doğrudan bizde yaptır', 'İlk yardım kursu rezervasyonu yap (yardım ederiz)', 'Kurs belgesini sakla', 'Her iki belgeyi sürücü kursuna teslim et', 'Sürücü eğitimine başla'],
-      ar: ['فحص النظر مباشرةً في مدرسة القيادة لدينا', 'حجز دورة الإسعافات الأولية (نساعدك)', 'الاحتفاظ بشهادة الدورة', 'تقديم الشهادتين لمدرسة القيادة', 'البدء في تدريب القيادة']
+      de: ['Sehtest direkt bei uns vor Ort machen', 'Erste-Hilfe-Kurs buchen (wir helfen dir dabei)', 'Kurs-Bescheinigung aufbewahren', 'Beide Nachweise bei uns einreichen', 'Mit der Fahrausbildung beginnen'],
+      en: ['Eye test directly at our driving school', 'Book first aid course (we can help)', 'Keep the course certificate', 'Submit both certificates to us', 'Begin driver training'],
+      tr: ['Göz testini doğrudan bizde yaptır', 'İlk yardım kursu rezervasyonu yap (yardım ederiz)', 'Kurs belgesini sakla', 'Her iki belgeyi bize teslim et', 'Sürücü eğitimine başla'],
+      ar: ['فحص النظر مباشرةً في مدرسة القيادة لدينا', 'حجز دورة الإسعافات الأولية (نساعدك)', 'الاحتفاظ بشهادة الدورة', 'تقديم الشهادتين إلينا', 'البدء في تدريب القيادة']
     }
   }
 };
@@ -2282,7 +2294,7 @@ const translations = {
     "klassen.b.badge": "Klasse B · Beliebt", "klassen.b.name": "PKW-Führerschein",
     "klassen.b.desc": "Der klassische Autoführerschein – persönlich begleitet, praxisnah und optimal auf Theorie- und Fahrprüfung vorbereitet.",
     "klassen.a.badge": "Klasse A / A2 / A1", "klassen.a.name": "Motorradführerschein",
-    "klassen.a.desc": "Motorradausbildung für Einsteiger und Direkteinsteiger. Klasse A2 für unter 24-Jährige, Klasse A ohne Leistungslimit.",
+    "klassen.a.desc": "Motorradausbildung für alle Stufen: A1 ab 16 J., A2 ab 18 J. (max. 35 kW), A80 ab 21 J. (Direkteinstieg oder nach A1 mit Aufstieg über A2), Klasse A (unbegrenzt) ab 24 J.",
     "klassen.am.badge": "Klasse AM", "klassen.am.name": "Moped & Roller",
     "klassen.am.desc": "Ab 16 Jahren. Der erste Schritt in die motorisierte Mobilität – ideal für Schüler und Auszubildende.",
     "klassen.intensiv.badge": "Sonderkurs", "klassen.intensiv.name": "Intensiv- & Ferienkurs",
@@ -2290,7 +2302,7 @@ const translations = {
     "klassen.mehr.badge": "Service", "klassen.mehr.name": "Mehrsprachige Ausbildung",
     "klassen.mehr.desc": "Unterricht und Fahrstunden in mehreren Sprachen – damit Sprachbarrieren kein Hindernis sind.",
     "klassen.erste.badge": "Pflicht", "klassen.erste.name": "Erste Hilfe & Sehtest",
-    "klassen.erste.desc": "Erste-Hilfe-Kurs und Sehtest direkt bei uns – alles aus einer Hand für deine Führerscheinanmeldung.",
+    "klassen.erste.desc": "Erste-Hilfe-Kurs (bei Aufsteigern nicht erneut benötigt) und Sehtest direkt bei uns – alles aus einer Hand. Beides kann bei uns absolviert werden.",
     "theorie.label": "Feste Kurszeiten", "theorie.title": "THEORIE-<br>UNTERRICHT",
     "theorie.sched.title": "Aktuelle Termine", "theorie.sched.note": "Feiertage ausgeschlossen",
     "theorie.mo": "Montag", "theorie.mi": "Mittwoch", "theorie.do": "Donnerstag",
@@ -2303,13 +2315,14 @@ const translations = {
     "staerken.1.title": "Persönliche & intensive Betreuung", "staerken.1.desc": "Du hast bei uns einen starken Partner an deiner Seite – vom ersten Theoriekurs bis zur bestandenen Prüfung.",
     "staerken.2.title": "Mehrsprachige Ausbildung", "staerken.2.desc": "Unterricht und Fahrstunden auf Wunsch in mehreren Sprachen – damit du dich wohlfühlst und sicher lernst.",
     "staerken.3.title": "Flexible Kurszeiten", "staerken.3.desc": "Abendkurse dreimal wöchentlich – jederzeit einsteigen, ganz ohne festen Starttermin.",
-    "staerken.4.title": "Führerschein auf Raten", "staerken.4.desc": "Ratenzahlung möglich – so ist die Ausbildung für jeden erschwinglich.",
-    "staerken.5.title": "Zentrale Lage mit Parkplatz", "staerken.5.desc": "Gut erreichbar in Berlin Gropiusstadt – Parkplätze direkt vor Ort vorhanden.",
+    "staerken.4.title": "Flexible Fahrstunden", "staerken.4.desc": "Wir bieten flexible Fahrstunden an – angepasst an deinen Alltag und deine Verfügbarkeit, ohne starre Vorgaben.",
+    "staerken.5.title": "Kaffee & Tee inklusive", "staerken.5.desc": "Bei uns ist Kaffee und Tee kostenlos für alle – weil eine entspannte Atmosphäre zum guten Lernen dazugehört.",
+    "staerken.6.title": "Transparent & seriös", "staerken.6.desc": "Keine versteckten Kosten, keine leeren Versprechen – bei uns weißt du immer, woran du bist.",
     "staerken.cta.title": "BEREIT LOSZULEGEN?", "staerken.cta.desc": "Ruf uns einfach an oder komm direkt vorbei. Wir beraten dich kostenlos zu allen Klassen und Preisen.",
     "staerken.cta.small": "Büro-Telefon",
     "staerken.cta.or": "oder",
     "staerken.cta.form": "📝 Zum Kontaktformular",
-    "staerken.hours.title": "Öffnungszeiten", "staerken.hours.mofr": "Montag – Freitag", "staerken.hours.sa": "Samstag", "staerken.hours.so": "Sonntag", "staerken.hours.closed": "Geschlossen",
+    "staerken.hours.title": "Öffnungszeiten", "staerken.hours.mofr": "Montag – Freitag", "staerken.hours.sa": "Samstag", "staerken.hours.so": "Sonntag & Feiertags", "staerken.hours.closed": "Geschlossen",
     "kontakt.label": "Kontakt & Anmeldung", "kontakt.title": "NIMM KONTAKT<br>AUF",
     "kontakt.addr.label": "Adresse", "kontakt.tel.label": "Telefon", "kontakt.mobil.label": "Mobil",
     "kontakt.map.label": "Navigation", "kontakt.map.value": "Auf Google Maps öffnen →",
@@ -2377,7 +2390,7 @@ const translations = {
     "klassen.b.badge": "Class B · Popular", "klassen.b.name": "Car License",
     "klassen.b.desc": "The classic car license – personally guided, practice-oriented, and perfectly prepared for theory and driving test.",
     "klassen.a.badge": "Class A / A2 / A1", "klassen.a.name": "Motorcycle License",
-    "klassen.a.desc": "Motorcycle training for beginners and direct entrants. Class A2 for under 24s, Class A with no power limit.",
+    "klassen.a.desc": "Motorcycle training for all levels: A1 from 16, A2 from 18 (max. 35 kW), A80 from 21 (direct entry or after A1 via A2), Class A (unlimited) from 24.",
     "klassen.am.badge": "Class AM", "klassen.am.name": "Moped & Scooter",
     "klassen.am.desc": "From age 16. The first step into motorized mobility – ideal for students and apprentices.",
     "klassen.intensiv.badge": "Special Course", "klassen.intensiv.name": "Intensive & Holiday Course",
@@ -2385,7 +2398,7 @@ const translations = {
     "klassen.mehr.badge": "Service", "klassen.mehr.name": "Multilingual Training",
     "klassen.mehr.desc": "Lessons and driving sessions in multiple languages – so language barriers are never an obstacle.",
     "klassen.erste.badge": "Required", "klassen.erste.name": "First Aid & Eye Test",
-    "klassen.erste.desc": "First aid course and eye test available on-site – everything from one place for your license registration.",
+    "klassen.erste.desc": "First aid course (not required again for upgraders) and eye test on-site – all in one place. Both can be completed directly at our school.",
     "theorie.label": "Fixed Course Times", "theorie.title": "THEORY<br>LESSONS",
     "theorie.sched.title": "Current Schedule", "theorie.sched.note": "Public holidays excluded",
     "theorie.mo": "Monday", "theorie.mi": "Wednesday", "theorie.do": "Thursday",
@@ -2398,13 +2411,14 @@ const translations = {
     "staerken.1.title": "Personal & intensive support", "staerken.1.desc": "We are a strong partner by your side – from the first theory lesson to passing the exam.",
     "staerken.2.title": "Multilingual training", "staerken.2.desc": "Lessons and driving sessions in multiple languages so you feel comfortable and learn safely.",
     "staerken.3.title": "Flexible course times", "staerken.3.desc": "Evening classes three times weekly – join at any time, no fixed start date.",
-    "staerken.4.title": "Pay by installment", "staerken.4.desc": "Installment payment available – making training affordable for everyone.",
-    "staerken.5.title": "Central location with parking", "staerken.5.desc": "Easily accessible in Berlin Gropiusstadt – parking spaces directly on-site.",
+    "staerken.4.title": "Flexible driving lessons", "staerken.4.desc": "We offer flexible driving lessons – tailored to your daily schedule and availability, no rigid timetables.",
+    "staerken.5.title": "Free coffee & tea", "staerken.5.desc": "Coffee and tea are complimentary for everyone – because a relaxed atmosphere is part of great learning.",
+    "staerken.6.title": "Transparent & reliable", "staerken.6.desc": "No hidden costs, no empty promises – with us, you always know where you stand.",
     "staerken.cta.title": "READY TO START?", "staerken.cta.desc": "Call us or just stop by. We advise you for free on all classes and prices.",
     "staerken.cta.small": "Office phone",
     "staerken.cta.or": "or",
     "staerken.cta.form": "📝 Go to contact form",
-    "staerken.hours.title": "Opening hours", "staerken.hours.mofr": "Monday – Friday", "staerken.hours.sa": "Saturday", "staerken.hours.so": "Sunday", "staerken.hours.closed": "Closed",
+    "staerken.hours.title": "Opening hours", "staerken.hours.mofr": "Monday – Friday", "staerken.hours.sa": "Saturday", "staerken.hours.so": "Sunday & Public Holidays", "staerken.hours.closed": "Closed",
     "kontakt.label": "Contact & Registration", "kontakt.title": "GET IN<br>TOUCH",
     "kontakt.addr.label": "Address", "kontakt.tel.label": "Phone", "kontakt.mobil.label": "Mobile",
     "kontakt.map.label": "Navigation", "kontakt.map.value": "Open in Google Maps →",
@@ -2472,7 +2486,7 @@ const translations = {
     "klassen.b.badge": "Sınıf B · Popüler", "klassen.b.name": "Otomobil Ehliyeti",
     "klassen.b.desc": "Klasik otomobil ehliyeti – kişisel rehberlik, pratik odaklı eğitim ve teori ile sürüş sınavına mükemmel hazırlık.",
     "klassen.a.badge": "Sınıf A / A2 / A1", "klassen.a.name": "Motosiklet Ehliyeti",
-    "klassen.a.desc": "Yeni başlayanlar ve direkt girenler için motosiklet eğitimi. A2 sınıfı 24 yaş altı için, A sınıfı güç sınırı yok.",
+    "klassen.a.desc": "Tüm seviyeler için motosiklet eğitimi: A1 16 yaştan, A2 18 yaştan (maks. 35 kW), A80 21 yaştan (direkt veya A1 üzerinden A2 ile), A sınıfı (sınırsız) 24 yaştan.",
     "klassen.am.badge": "Sınıf AM", "klassen.am.name": "Moped & Scooter",
     "klassen.am.desc": "16 yaşından itibaren. Motorlu taşıt mobiliteye ilk adım – öğrenciler ve stajyerler için ideal.",
     "klassen.intensiv.badge": "Özel Kurs", "klassen.intensiv.name": "Yoğun & Tatil Kursu",
@@ -2480,7 +2494,7 @@ const translations = {
     "klassen.mehr.badge": "Hizmet", "klassen.mehr.name": "Çok Dilli Eğitim",
     "klassen.mehr.desc": "Birden fazla dilde ders ve sürüş seansları – dil engeli artık bir sorun değil.",
     "klassen.erste.badge": "Zorunlu", "klassen.erste.name": "İlk Yardım & Göz Testi",
-    "klassen.erste.desc": "İlk yardım kursu ve göz testi bizde mevcut – ehliyet kaydı için her şey tek elden.",
+    "klassen.erste.desc": "İlk yardım kursu (yükseltme yapanlar için tekrar gerekli değil) ve göz testi bizde – her şey tek elden. İkisi de bizde yapılabilir.",
     "theorie.label": "Sabit Kurs Saatleri", "theorie.title": "TEORİ<br>DERSLERİ",
     "theorie.sched.title": "Güncel Saatler", "theorie.sched.note": "Resmi tatiller hariç",
     "theorie.mo": "Pazartesi", "theorie.mi": "Çarşamba", "theorie.do": "Perşembe",
@@ -2493,13 +2507,14 @@ const translations = {
     "staerken.1.title": "Kişisel & yoğun destek", "staerken.1.desc": "İlk teori dersinden sınavı geçene kadar yanında güçlü bir ortak oluyoruz.",
     "staerken.2.title": "Çok dilli eğitim", "staerken.2.desc": "İstediğin dilde ders ve sürüş seansları – kendini rahat hisset ve güvenle öğren.",
     "staerken.3.title": "Esnek kurs saatleri", "staerken.3.desc": "Haftada üç kez akşam dersleri – istediğin zaman katıl, sabit başlangıç tarihi yok.",
-    "staerken.4.title": "Taksitle ehliyet", "staerken.4.desc": "Taksit imkânı – eğitimi herkes için erişilebilir kılıyoruz.",
-    "staerken.5.title": "Merkezi konum ve otopark", "staerken.5.desc": "Berlin Gropiusstadt'ta kolayca ulaşılabilir – yerinde otopark mevcut.",
+    "staerken.4.title": "Esnek sürüş dersleri", "staerken.4.desc": "Günlük programına ve müsaitliğine göre esnek sürüş dersleri sunuyoruz – katı kurallar yok.",
+    "staerken.5.title": "Ücretsiz kahve ve çay", "staerken.5.desc": "Herkese ücretsiz kahve ve çay – rahat bir atmosfer iyi öğrenmenin parçasıdır.",
+    "staerken.6.title": "Şeffaf ve güvenilir", "staerken.6.desc": "Gizli maliyet yok, boş vaat yok – bizimle her zaman ne beklediğini bilirsin.",
     "staerken.cta.title": "BAŞLAMAYA HAZIR MISIN?", "staerken.cta.desc": "Bizi ara veya gel. Tüm sınıflar ve fiyatlar hakkında ücretsiz danışmanlık.",
     "staerken.cta.small": "Ofis telefonu",
     "staerken.cta.or": "veya",
     "staerken.cta.form": "📝 İletişim formuna git",
-    "staerken.hours.title": "Çalışma saatleri", "staerken.hours.mofr": "Pazartesi – Cuma", "staerken.hours.sa": "Cumartesi", "staerken.hours.so": "Pazar", "staerken.hours.closed": "Kapalı",
+    "staerken.hours.title": "Çalışma saatleri", "staerken.hours.mofr": "Pazartesi – Cuma", "staerken.hours.sa": "Cumartesi", "staerken.hours.so": "Pazar & Resmi Tatiller", "staerken.hours.closed": "Kapalı",
     "kontakt.label": "İletişim & Kayıt", "kontakt.title": "BİZİMLE<br>İLETİŞİME GEÇ",
     "kontakt.addr.label": "Adres", "kontakt.tel.label": "Telefon", "kontakt.mobil.label": "Mobil",
     "kontakt.map.label": "Navigasyon", "kontakt.map.value": "Google Maps'te aç →",
@@ -2567,7 +2582,7 @@ const translations = {
     "klassen.b.badge": "فئة B · الأكثر طلبًا", "klassen.b.name": "رخصة السيارة",
     "klassen.b.desc": "رخصة السيارة الكلاسيكية – إرشاد شخصي، تدريب عملي، وإعداد مثالي للاختبار النظري والتطبيقي.",
     "klassen.a.badge": "فئة A / A2 / A1", "klassen.a.name": "رخصة الدراجة النارية",
-    "klassen.a.desc": "تدريب على الدراجة النارية للمبتدئين. فئة A2 لمن هم دون 24 سنة، وفئة A بدون قيود على القوة.",
+    "klassen.a.desc": "تدريب لجميع المستويات: A1 من 16 سنة، A2 من 18 سنة (أقصى 35 كيلوواط)، A80 من 21 سنة (مباشر أو بعد A1 عبر A2)، فئة A (غير محدودة) من 24 سنة.",
     "klassen.am.badge": "فئة AM", "klassen.am.name": "موبيد وسكوتر",
     "klassen.am.desc": "من عمر 16 سنة. الخطوة الأولى نحو التنقل بمحرك – مثالي للطلاب والمتدربين.",
     "klassen.intensiv.badge": "دورة خاصة", "klassen.intensiv.name": "دورة مكثفة وإجازة",
@@ -2575,7 +2590,7 @@ const translations = {
     "klassen.mehr.badge": "خدمة", "klassen.mehr.name": "تدريب متعدد اللغات",
     "klassen.mehr.desc": "دروس وجلسات قيادة بلغات متعددة – لن تكون حواجز اللغة عائقًا بعد الآن.",
     "klassen.erste.badge": "إلزامي", "klassen.erste.name": "إسعافات أولية وفحص النظر",
-    "klassen.erste.desc": "دورة إسعافات أولية وفحص النظر لدينا – كل شيء من مكان واحد لتسجيل رخصتك.",
+    "klassen.erste.desc": "دورة الإسعافات الأولية (غير مطلوبة مجدداً للمرتقين) وفحص النظر لدينا – كل شيء من مكان واحد. كلاهما يمكن إجراؤه مباشرةً لدينا.",
     "theorie.label": "مواعيد ثابتة", "theorie.title": "دروس<br>النظري",
     "theorie.sched.title": "المواعيد الحالية", "theorie.sched.note": "ما عدا العطل الرسمية",
     "theorie.mo": "الاثنين", "theorie.mi": "الأربعاء", "theorie.do": "الخميس",
@@ -2588,13 +2603,14 @@ const translations = {
     "staerken.1.title": "دعم شخصي ومكثف", "staerken.1.desc": "نكون شريكك القوي من أول درس نظري حتى اجتياز الاختبار.",
     "staerken.2.title": "تدريب متعدد اللغات", "staerken.2.desc": "دروس وجلسات قيادة بلغتك – لتشعر بالراحة وتتعلم بأمان.",
     "staerken.3.title": "مواعيد مرنة", "staerken.3.desc": "دروس مسائية ثلاث مرات أسبوعيًا – انضم متى شئت.",
-    "staerken.4.title": "رخصة بالأقساط", "staerken.4.desc": "إمكانية الدفع بالأقساط – لنجعل التدريب في متناول الجميع.",
-    "staerken.5.title": "موقع مركزي مع ركن سيارات", "staerken.5.desc": "يسهل الوصول إلينا في برلين غروبيوسشتات – مواقف سيارات في الموقع.",
+    "staerken.4.title": "دروس قيادة مرنة", "staerken.4.desc": "نقدم دروس قيادة مرنة – تتناسب مع جدولك اليومي وإمكانياتك، بدون قيود صارمة.",
+    "staerken.5.title": "قهوة وشاي مجاناً", "staerken.5.desc": "القهوة والشاي مجانية للجميع – لأن الجو المريح جزء من التعلم الجيد.",
+    "staerken.6.title": "شفاف وموثوق", "staerken.6.desc": "لا تكاليف خفية، لا وعود فارغة – معنا تعرف دائماً أين أنت.",
     "staerken.cta.title": "مستعد للبدء؟", "staerken.cta.desc": "اتصل بنا أو تعال مباشرة. نقدم استشارة مجانية لجميع الفئات والأسعار.",
     "staerken.cta.small": "هاتف المكتب",
     "staerken.cta.or": "أو",
     "staerken.cta.form": "📝 اذهب إلى نموذج التواصل",
-    "staerken.hours.title": "ساعات العمل", "staerken.hours.mofr": "الاثنين – الجمعة", "staerken.hours.sa": "السبت", "staerken.hours.so": "الأحد", "staerken.hours.closed": "مغلق",
+    "staerken.hours.title": "ساعات العمل", "staerken.hours.mofr": "الاثنين – الجمعة", "staerken.hours.sa": "السبت", "staerken.hours.so": "الأحد والعطل الرسمية", "staerken.hours.closed": "مغلق",
     "kontakt.label": "تواصل وتسجيل", "kontakt.title": "تواصل<br>معنا",
     "kontakt.addr.label": "العنوان", "kontakt.tel.label": "هاتف", "kontakt.mobil.label": "جوال",
     "kontakt.map.label": "الملاحة", "kontakt.map.value": "فتح في خرائط Google →",
