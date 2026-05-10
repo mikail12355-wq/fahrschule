@@ -416,10 +416,11 @@
 
     <div class="info-box">
       <span class="icon">ℹ️</span>
-      <p data-i18n="info.text">Nach dem Absenden erhältst du eine Bestätigung. Wir melden uns innerhalb von <strong>1–2 Werktagen</strong> bei dir, um alles Weitere zu besprechen.</p>
+      <p data-i18n="info.text">Nach dem Absenden deiner Anmeldung erhältst du innerhalb von <strong>1–2 Werktagen</strong> einen <strong>Anruf oder eine E-Mail</strong> von uns.</p>
     </div>
 
     <form id="anmeldung-form">
+
 
       <!-- Persönliche Daten -->
       <div class="divider"><span data-i18n="sec.personal">Persönliche Daten</span></div>
@@ -451,17 +452,17 @@
         <input type="date" name="geburtsdatum" required>
       </div>
       <div class="form-group">
-        <label data-i18n="lbl.geburtsort">Geburtsort *</label>
+        <label data-i18n="lbl.geburtsort">Geburtsort</label>
         <input type="text" name="geburtsort" placeholder="z. B. Berlin" data-i18n-ph="ph.geburtsort">
       </div>
 
       <div class="form-group">
-        <label data-i18n="lbl.staat">Staatsangehörigkeit *</label>
+        <label data-i18n="lbl.staat">Staatsangehörigkeit</label>
         <input type="text" name="staatsangehoerigkeit" placeholder="z. B. Deutsch" data-i18n-ph="ph.staat">
       </div>
 
       <div class="form-group">
-        <label data-i18n="lbl.ausweis">Ausweisnummer *</label>
+        <label data-i18n="lbl.ausweis">Ausweisnummer</label>
         <input type="text" name="ausweisnummer" placeholder="Personalausweis- oder Reisepassnummer" data-i18n-ph="ph.ausweis">
       </div>
 
@@ -518,7 +519,7 @@
       <div class="divider" style="margin-top:32px;"><span data-i18n="sec.sehhilfe">Sehhilfe</span></div>
 
       <div class="form-group">
-        <label data-i18n="lbl.sehhilfe">Wird eine Sehhilfe benötigt? *</label>
+        <label data-i18n="lbl.sehhilfe">Wird eine Sehhilfe benötigt?</label>
         <div class="radio-group">
           <label class="radio-chip"><input type="radio" name="sehhilfe" value="Ja" required><span data-i18n="opt.ja">Ja</span></label>
           <label class="radio-chip"><input type="radio" name="sehhilfe" value="Nein"><span data-i18n="opt.nein">Nein</span></label>
@@ -604,7 +605,7 @@
 
       <div class="success-box" id="success-box">
         <div class="check">✅</div>
-        <div><span data-i18n="success.text">Deine Anmeldung wurde erfolgreich versendet!<br>Wir melden uns bald bei dir.</span></div>
+        <div><span data-i18n="success.text">Deine Anmeldung wurde erfolgreich übermittelt!<br>Du erhältst innerhalb von <strong>1–2 Werktagen</strong> einen Anruf oder eine E-Mail von uns.</span></div>
       </div>
 
       <p class="privacy-note">
@@ -669,12 +670,12 @@ const translations = {
     'hero.label': 'Fahrschule Nazar Berlin',
     'hero.title': 'JETZT <em>ANMELDEN</em>',
     'hero.sub': 'Fülle das Formular aus und wir melden uns schnellstmöglich bei dir. Deine Daten werden sicher übertragen.',
-    'info.text': 'Nach dem Absenden erhältst du eine Bestätigung. Wir melden uns innerhalb von <strong>1–2 Werktagen</strong> bei dir, um alles Weitere zu besprechen.',
+    'info.text': 'Nach dem Absenden deiner Anmeldung erhältst du innerhalb von <strong>1–2 Werktagen</strong> einen <strong>Anruf oder eine E-Mail</strong> von uns.',
     'sec.personal': 'Persönliche Daten', 'sec.contact': 'Kontaktdaten', 'sec.address': 'Adresse', 'sec.klasse': 'Gewünschte Führerscheinklasse',
     'lbl.vorname': 'Vorname *', 'lbl.nachname': 'Nachname *', 'lbl.geburt': 'Geburtsdatum *', 'lbl.staat': 'Staatsangehörigkeit',
     'lbl.ausweis': 'Ausweisnummer', 'lbl.telefon': 'Telefonnummer *', 'lbl.email': 'E-Mail-Adresse *',
     'lbl.geschlecht': 'Geschlecht *', 'lbl.geburtsort': 'Geburtsort', 'lbl.sprache': 'Gesprochene Sprache(n) *',
-    'lbl.festnetz': 'Festnetz', 'lbl.telefon.hint': '(mind. Mobil oder Festnetz)', 'lbl.festnetz.hint': '(mind. eines Pflicht)', 'lbl.sehhilfe': 'Wird eine Sehhilfe benötigt? *',
+    'lbl.festnetz': 'Festnetz', 'lbl.telefon.hint': '(mind. Mobil oder Festnetz)', 'lbl.festnetz.hint': '(mind. eines Pflicht)', 'lbl.sehhilfe': 'Wird eine Sehhilfe benötigt?',
     'opt.maennlich': 'Männlich', 'opt.weiblich': 'Weiblich', 'opt.divers': 'Divers', 'opt.keineangabe': 'Keine Angabe',
     'opt.ja': 'Ja', 'opt.nein': 'Nein', 'opt.unbekannt': 'Nicht sicher',
     'sec.sehhilfe': 'Sehhilfe', 'sec.erweiterung': 'Erweiterungen & Zusatzleistungen',
@@ -687,7 +688,7 @@ const translations = {
     'ph.strasse': 'Musterstraße', 'ph.ort': 'Berlin',
     'btn.submit': '✉️ &nbsp; Anmeldung absenden',
     'confirm.text': 'Ich bestätige, dass alle angegebenen Daten <strong>vollständig und korrekt</strong> sind. Ich stimme zu, dass meine Daten zur Bearbeitung der Anmeldung verwendet werden.',
-    'success.text': 'Deine Anmeldung wurde erfolgreich versendet!<br>Wir melden uns bald bei dir.',
+    'success.text': 'Deine Anmeldung wurde erfolgreich übermittelt!<br>Du erhältst innerhalb von <strong>1–2 Werktagen</strong> einen Anruf oder eine E-Mail von uns.',
     'privacy.text': '* Pflichtfelder. Deine Daten werden ausschließlich zur Bearbeitung deiner Anmeldung verwendet und nicht an Dritte weitergegeben.',
     'nav.back': '← Hauptseite',
     'nav.fahrschule': 'Fahrschule',
@@ -700,12 +701,12 @@ const translations = {
     'hero.label': 'Driving School Nazar Berlin',
     'hero.title': 'REGISTER <em>NOW</em>',
     'hero.sub': 'Fill out the form and we will get back to you as soon as possible. Your data is transferred securely.',
-    'info.text': 'After submitting you will receive a confirmation. We will contact you within <strong>1–2 business days</strong> to discuss further details.',
+    'info.text': 'After submitting your registration, you will receive a <strong>call or email</strong> from us within <strong>1–2 business days</strong>.',
     'sec.personal': 'Personal Details', 'sec.contact': 'Contact Details', 'sec.address': 'Address', 'sec.klasse': 'Desired Licence Class',
     'lbl.vorname': 'First Name *', 'lbl.nachname': 'Last Name *', 'lbl.geburt': 'Date of Birth *', 'lbl.staat': 'Nationality',
     'lbl.ausweis': 'ID Number', 'lbl.telefon': 'Phone Number *', 'lbl.email': 'Email Address *',
     'lbl.geschlecht': 'Gender *', 'lbl.geburtsort': 'Place of Birth', 'lbl.sprache': 'Language(s) spoken *',
-    'lbl.festnetz': 'Landline', 'lbl.telefon.hint': '(at least mobile or landline)', 'lbl.festnetz.hint': '(at least one required)', 'lbl.sehhilfe': 'Is a visual aid needed? *',
+    'lbl.festnetz': 'Landline', 'lbl.telefon.hint': '(at least mobile or landline)', 'lbl.festnetz.hint': '(at least one required)', 'lbl.sehhilfe': 'Is a visual aid needed?',
     'opt.maennlich': 'Male', 'opt.weiblich': 'Female', 'opt.divers': 'Diverse', 'opt.keineangabe': 'Prefer not to say',
     'opt.ja': 'Yes', 'opt.nein': 'No', 'opt.unbekannt': 'Not sure',
     'sec.sehhilfe': 'Visual Aid', 'sec.erweiterung': 'Extensions & Additional Services',
@@ -718,7 +719,7 @@ const translations = {
     'ph.strasse': 'Example Street', 'ph.ort': 'Berlin',
     'btn.submit': '✉️ &nbsp; Submit Registration',
     'confirm.text': 'I confirm that all provided data is <strong>complete and correct</strong>. I agree that my data will be used to process my registration.',
-    'success.text': 'Your registration was submitted successfully!<br>We will get in touch soon.',
+    'success.text': 'Your registration was submitted successfully!<br>You will receive a call or email from us within <strong>1–2 business days</strong>.',
     'privacy.text': '* Required fields. Your data is used exclusively to process your registration and will not be shared with third parties.',
     'nav.back': '← Home',
     'nav.fahrschule': 'Driving School',
@@ -731,12 +732,12 @@ const translations = {
     'hero.label': 'Nazar Sürücü Kursu Berlin',
     'hero.title': 'ŞİMDİ <em>KAYIT OL</em>',
     'hero.sub': 'Formu doldur, en kısa sürede seninle iletişime geçeceğiz. Verilerин güvenli şekilde iletilir.',
-    'info.text': 'Gönderdikten sonra bir onay alacaksın. <strong>1–2 iş günü</strong> içinde seninle iletişime geçeceğiz.',
+    'info.text': 'Kaydını gönderdikten sonra <strong>1–2 iş günü</strong> içinde seni <strong>arayacağız veya e-posta göndereceğiz</strong>.',
     'sec.personal': 'Kişisel Bilgiler', 'sec.contact': 'İletişim Bilgileri', 'sec.address': 'Adres', 'sec.klasse': 'İstenen Ehliyet Sınıfı',
     'lbl.vorname': 'Ad *', 'lbl.nachname': 'Soyad *', 'lbl.geburt': 'Doğum Tarihi *', 'lbl.staat': 'Uyruk',
     'lbl.ausweis': 'Kimlik Numarası', 'lbl.telefon': 'Telefon Numarası *', 'lbl.email': 'E-posta Adresi *',
     'lbl.geschlecht': 'Cinsiyet *', 'lbl.geburtsort': 'Doğum Yeri', 'lbl.sprache': 'Konuşulan Dil(ler) *',
-    'lbl.festnetz': 'Sabit Hat', 'lbl.telefon.hint': '(en az mobil veya sabit hat)', 'lbl.festnetz.hint': '(en az biri zorunlu)', 'lbl.sehhilfe': 'Görme yardımcısı gerekiyor mu? *',
+    'lbl.festnetz': 'Sabit Hat', 'lbl.telefon.hint': '(en az mobil veya sabit hat)', 'lbl.festnetz.hint': '(en az biri zorunlu)', 'lbl.sehhilfe': 'Görme yardımcısı gerekiyor mu?',
     'opt.maennlich': 'Erkek', 'opt.weiblich': 'Kadın', 'opt.divers': 'Diğer', 'opt.keineangabe': 'Belirtmek istemiyorum',
     'opt.ja': 'Evet', 'opt.nein': 'Hayır', 'opt.unbekannt': 'Emin değilim',
     'sec.sehhilfe': 'Görme Yardımcısı', 'sec.erweiterung': 'Ek Hizmetler',
@@ -749,7 +750,7 @@ const translations = {
     'ph.strasse': 'Örnek Sokak', 'ph.ort': 'Berlin',
     'btn.submit': '✉️ &nbsp; Kaydı Gönder',
     'confirm.text': 'Verilen tüm bilgilerin <strong>eksiksiz ve doğru</strong> olduğunu onaylıyorum. Verilerimin kaydımı işlemek için kullanılmasını kabul ediyorum.',
-    'success.text': 'Kaydın başarıyla gönderildi!<br>Yakında seninle iletişime geçeceğiz.',
+    'success.text': 'Kaydın başarıyla iletildi!<br><strong>1–2 iş günü</strong> içinde seni arayacağız veya e-posta göndereceğiz.',
     'privacy.text': '* Zorunlu alanlar. Verileriniz yalnızca kaydınızı işlemek amacıyla kullanılır, üçüncü taraflarla paylaşılmaz.',
     'nav.back': '← Ana Sayfa',
     'nav.fahrschule': 'Sürücü Kursu',
@@ -762,12 +763,12 @@ const translations = {
     'hero.label': 'مدرسة قيادة نظار برلين',
     'hero.title': 'سجّل <em>الآن</em>',
     'hero.sub': 'املأ النموذج وسنتواصل معك في أقرب وقت. بياناتك تُنقل بأمان.',
-    'info.text': 'بعد الإرسال ستصلك رسالة تأكيد. سنتواصل معك خلال <strong>1–2 يوم عمل</strong> لمناقشة التفاصيل.',
+    'info.text': 'بعد إرسال طلبك، ستتلقى <strong>مكالمة أو بريدًا إلكترونيًا</strong> منا خلال <strong>1–2 يوم عمل</strong>.',
     'sec.personal': 'البيانات الشخصية', 'sec.contact': 'بيانات التواصل', 'sec.address': 'العنوان', 'sec.klasse': 'فئة الرخصة المطلوبة',
     'lbl.vorname': 'الاسم الأول *', 'lbl.nachname': 'اسم العائلة *', 'lbl.geburt': 'تاريخ الميلاد *', 'lbl.staat': 'الجنسية',
     'lbl.ausweis': 'رقم الهوية', 'lbl.telefon': 'رقم الهاتف *', 'lbl.email': 'البريد الإلكتروني *',
     'lbl.geschlecht': 'الجنس *', 'lbl.geburtsort': 'مكان الميلاد', 'lbl.sprache': 'اللغة/اللغات المتحدث بها *',
-    'lbl.festnetz': 'الهاتف الثابت', 'lbl.telefon.hint': '(موبايل أو ثابت على الأقل)', 'lbl.festnetz.hint': '(واحد على الأقل مطلوب)', 'lbl.sehhilfe': 'هل تحتاج إلى مساعدة بصرية؟ *',
+    'lbl.festnetz': 'الهاتف الثابت', 'lbl.telefon.hint': '(موبايل أو ثابت على الأقل)', 'lbl.festnetz.hint': '(واحد على الأقل مطلوب)', 'lbl.sehhilfe': 'هل تحتاج إلى مساعدة بصرية؟',
     'opt.maennlich': 'ذكر', 'opt.weiblich': 'أنثى', 'opt.divers': 'متنوع', 'opt.keineangabe': 'أفضل عدم الإجابة',
     'opt.ja': 'نعم', 'opt.nein': 'لا', 'opt.unbekannt': 'غير متأكد',
     'sec.sehhilfe': 'المساعدة البصرية', 'sec.erweiterung': 'الإضافات والخدمات الإضافية',
@@ -780,7 +781,7 @@ const translations = {
     'ph.strasse': 'اسم الشارع', 'ph.ort': 'برلين',
     'btn.submit': '✉️ &nbsp; إرسال التسجيل',
     'confirm.text': 'أؤكد أن جميع البيانات المقدمة <strong>مكتملة وصحيحة</strong>. أوافق على استخدام بياناتي لمعالجة طلبي.',
-    'success.text': 'تم إرسال طلب التسجيل بنجاح!<br>سنتواصل معك قريباً.',
+    'success.text': 'تم إرسال طلبك بنجاح!<br>ستتلقى مكالمة أو بريدًا إلكترونيًا منا خلال <strong>1–2 يوم عمل</strong>.',
     'privacy.text': '* حقول إلزامية. تُستخدم بياناتك حصريًا لمعالجة تسجيلك ولن تُشارك مع أطراف ثالثة.',
     'nav.back': '→ الرئيسية',
     'nav.fahrschule': 'مدرسة القيادة',
@@ -856,26 +857,27 @@ document.addEventListener('click', e => {
   if (!e.target.closest('.lang-switcher')) closeLang();
 });
 
-// ── Form submit ───────────────────────────────────────────────────────────────
-  document.getElementById('anmeldung-form').addEventListener('submit', function(e) {
+// ── Form submit (Formspree) ──────────────────────────────────────────────────
+  document.getElementById('anmeldung-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const f = this;
-    const get = name => f.querySelector(`[name="${name}"]`).value.trim();
+    const get = name => {
+      const el = f.querySelector(`[name="${name}"]`);
+      return el ? el.value.trim() : '';
+    };
 
-    const klassen = [...f.querySelectorAll('input[name="klasse"]:checked')]
-      .map(cb => cb.value).join(', ') || 'Keine Auswahl';
-
-    const subject = encodeURIComponent('Neue Anmeldung – ' + get('vorname') + ' ' + get('nachname'));
-
-        // Validate: at least one of Mobil or Festnetz must be filled
-    const mobilVal = f.querySelector('[name="telefon"]').value.trim();
-    const festnetzVal = f.querySelector('[name="festnetz"]').value.trim();
+    // Validate: at least one phone number required
+    const mobilVal = get('telefon');
+    const festnetzVal = get('festnetz');
     if (!mobilVal && !festnetzVal) {
       alert('Bitte gib mindestens eine Telefonnummer an (Mobil oder Festnetz).');
       f.querySelector('[name="telefon"]').focus();
       return;
     }
+
+    const klassen = [...f.querySelectorAll('input[name="klasse"]:checked')]
+      .map(cb => cb.value).join(', ') || 'Keine Auswahl';
 
     const erweiterungen = [...f.querySelectorAll('input[name="erweiterung"]:checked')]
       .map(cb => cb.value).join(', ') || 'Keine';
@@ -885,52 +887,58 @@ document.addEventListener('click', e => {
       return el ? el.value : 'Keine Angabe';
     };
 
-    const body = encodeURIComponent(
-`Neue Anmeldung über die Website
+    // Submit button loading state
+    const btn = f.querySelector('.btn-submit');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '⏳ &nbsp; Wird gesendet...';
+    btn.style.background = '#5a9bd4';
 
-──────────────────────────────
-PERSÖNLICHE DATEN
-──────────────────────────────
-Vorname:             ${get('vorname')}
-Nachname:            ${get('nachname')}
-Geschlecht:          ${getRadio('geschlecht')}
-Geburtsdatum:        ${get('geburtsdatum')}
-Geburtsort:          ${get('geburtsort')}
-Staatsangehörigkeit: ${get('staatsangehoerigkeit')}
-Gesprochene Sprache: ${get('sprache')}
-Ausweisnummer:       ${get('ausweisnummer')}
+    const formData = {
+      _subject: 'Neue Anmeldung – ' + get('vorname') + ' ' + get('nachname'),
+      _replyto: get('email'),
+      Vorname: get('vorname'),
+      Nachname: get('nachname'),
+      Geschlecht: getRadio('geschlecht'),
+      Geburtsdatum: get('geburtsdatum'),
+      Geburtsort: get('geburtsort') || '–',
+      Staatsangehoerigkeit: get('staatsangehoerigkeit') || '–',
+      Sprache: get('sprache'),
+      Ausweisnummer: get('ausweisnummer') || '–',
+      Mobilnummer: mobilVal || '–',
+      Festnetz: festnetzVal || '–',
+      Email: get('email'),
+      Strasse: get('strasse') + ' ' + get('hausnummer'),
+      PLZ_Ort: get('plz') + ' ' + get('ort'),
+      Sehhilfe: getRadio('sehhilfe'),
+      Fuehrerscheinklassen: klassen,
+      Erweiterungen: erweiterungen,
+    };
 
-──────────────────────────────
-KONTAKT
-──────────────────────────────
-Mobil:               ${get('telefon')}
-Festnetz:            ${get('festnetz') || '–'}
-E-Mail:              ${get('email')}
+    try {
+      const res = await fetch('https://formspree.io/f/xrejrzgp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
-──────────────────────────────
-ADRESSE
-──────────────────────────────
-Straße / Nr.:        ${get('strasse')} ${get('hausnummer')}
-PLZ / Ort:           ${get('plz')} ${get('ort')}
-
-──────────────────────────────
-SEHHILFE
-──────────────────────────────
-Sehhilfe benötigt:   ${getRadio('sehhilfe')}
-
-──────────────────────────────
-FÜHRERSCHEINKLASSE & ERWEITERUNGEN
-──────────────────────────────
-Gewünschte Klasse:   ${klassen}
-Erweiterungen:       ${erweiterungen}
-`);
-
-    window.location.href = `mailto:fahrschulenazar@gmx.de?subject=${subject}&body=${body}`;
-
-    setTimeout(() => {
-      document.getElementById('success-box').style.display = 'block';
-      document.getElementById('success-box').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 500);
+      if (res.ok) {
+        btn.innerHTML = '✅ &nbsp; Erfolgreich gesendet!';
+        btn.style.background = '#22a85c';
+        const successBox = document.getElementById('success-box');
+        successBox.style.display = 'block';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        f.reset();
+      } else {
+        const data = await res.json();
+        throw new Error(data.error || 'Serverfehler');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+      btn.style.background = '';
+      alert('Fehler beim Senden. Bitte ruf uns direkt an: 030 / 629 013 31');
+    }
   });
 </script>
 
