@@ -138,6 +138,7 @@
 
     .form-group {
       margin-bottom: 22px;
+      position: relative;
     }
     .form-row {
       display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; min-width: 0;
@@ -171,8 +172,11 @@
       font-size: 15px; font-family: inherit;
       color: var(--black);
       background: var(--white);
+      -webkit-transition: border-color 0.2s, box-shadow 0.2s;
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
+      -webkit-appearance: none;
+      appearance: none;
     }
     .form-group input:focus,
     .form-group select:focus {
@@ -345,9 +349,13 @@
     .form-group input.error,
     .form-group select.error {
       border-color: #e53e3e !important;
+      -webkit-box-shadow: 0 0 0 3px rgba(229,62,62,0.12) !important;
       box-shadow: 0 0 0 3px rgba(229,62,62,0.12) !important;
       background: #fff8f8 !important;
+      color: #e53e3e;
+      outline: none !important;
     }
+    .form-group input.error::-webkit-input-placeholder { color: #e53e3e; }
     .form-group input.error::placeholder { color: #e53e3e; }
 
     .radio-group.error .radio-chip,
@@ -361,22 +369,33 @@
     }
 
     .error-msg {
-      display: block;
-      margin-top: 6px;
-      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 6px;
+      font-size: 12px;
       font-weight: 700;
       color: #e53e3e;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
+      animation: errorSlideIn 0.2s ease;
+    }
+    .error-msg::before {
+      content: '⚠';
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    @keyframes errorSlideIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .phone-group-error {
       border: 2px solid #e53e3e;
       border-radius: 12px;
-      padding: 12px;
+      padding: 12px 12px 12px 12px;
       background: #fff8f8;
       margin-bottom: 22px;
     }
-    .phone-group-error .error-msg { margin-top: 8px; }
 
     /* ── CONFIRM CHECKBOX ── */
     .confirm-box {
@@ -897,32 +916,56 @@ document.addEventListener('click', e => {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
   function clearErrors(f) {
-    f.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    f.querySelectorAll('.error').forEach(el => {
+      el.classList.remove('error');
+      // Remove inline styles added for Safari
+      el.style.borderColor = '';
+      el.style.backgroundColor = '';
+      el.style.webkitBoxShadow = '';
+      el.style.boxShadow = '';
+      el.style.outline = '';
+      el.style.outlineOffset = '';
+    });
     f.querySelectorAll('.error-msg').forEach(el => el.remove());
     f.querySelectorAll('.phone-group-error').forEach(el => {
       el.classList.remove('phone-group-error');
+      el.style.border = '';
+      el.style.background = '';
     });
   }
 
   function markError(el, msg) {
     el.classList.add('error');
+    // Inline styles as Safari fallback
+    el.style.borderColor = '#e53e3e';
+    el.style.backgroundColor = '#fff8f8';
+    el.style.webkitBoxShadow = '0 0 0 3px rgba(229,62,62,0.12)';
+    el.style.boxShadow = '0 0 0 3px rgba(229,62,62,0.12)';
     // Remove existing error msg if any
     const existing = el.parentNode.querySelector('.error-msg');
     if (existing) existing.remove();
     const span = document.createElement('span');
     span.className = 'error-msg';
-    span.textContent = msg || 'Dieses Feld ist erforderlich.';
-    el.parentNode.appendChild(span);
+    // Apply inline styles to span too for Safari
+    span.style.cssText = 'display:flex;align-items:center;gap:5px;margin-bottom:6px;font-size:12px;font-weight:700;color:#e53e3e;letter-spacing:0.2px;';
+    span.innerHTML = '⚠ ' + (msg || 'Dieses Feld ist erforderlich.');
+    // Insert BEFORE the input/select (after the label)
+    el.parentNode.insertBefore(span, el);
   }
 
   function markRadioError(groupEl, msg) {
     groupEl.classList.add('error');
+    groupEl.style.outline = '2px solid #e53e3e';
+    groupEl.style.outlineOffset = '4px';
+    groupEl.style.borderRadius = '10px';
     const existing = groupEl.parentNode.querySelector('.error-msg');
     if (existing) existing.remove();
     const span = document.createElement('span');
     span.className = 'error-msg';
-    span.textContent = msg || 'Bitte eine Option auswählen.';
-    groupEl.parentNode.appendChild(span);
+    span.style.cssText = 'display:flex;align-items:center;gap:5px;margin-bottom:6px;font-size:12px;font-weight:700;color:#e53e3e;letter-spacing:0.2px;';
+    span.innerHTML = '⚠ ' + (msg || 'Bitte eine Option auswählen.');
+    // Insert BEFORE the radio-group
+    groupEl.parentNode.insertBefore(span, groupEl);
   }
 
 // ── Form submit (Formspree) ──────────────────────────────────────────────────
@@ -1065,6 +1108,10 @@ document.addEventListener('click', e => {
     const el = e.target;
     if (el.classList.contains('error') && el.value.trim()) {
       el.classList.remove('error');
+      el.style.borderColor = '';
+      el.style.backgroundColor = '';
+      el.style.webkitBoxShadow = '';
+      el.style.boxShadow = '';
       const msg = el.parentNode.querySelector('.error-msg');
       if (msg) msg.remove();
     }
