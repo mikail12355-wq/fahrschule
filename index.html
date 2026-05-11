@@ -1713,8 +1713,7 @@
       <h3 data-i18n="form.title">Rückruf anfordern</h3>
       <p data-i18n="form.desc">Gib uns deine Telefonnummer – wir rufen dich zurück!</p>
 
-      <!-- Formspree: ersetzt ozturkmikail2000@yahoo.de mit deiner eigenen Formspree-ID (siehe Anleitung unten) -->
-      <form id="contactForm" action="https://formspree.io/f/mojrawoq" method="POST" novalidate>
+      <form id="contactForm" action="mailto:fahrschulenazar@gmx.de" method="POST" enctype="text/plain" novalidate>
 
         <!-- Verstecktes Feld: Sprachinfo -->
         <input type="hidden" name="_language" id="formLang" value="de">
@@ -2827,47 +2826,37 @@ document.addEventListener('click', e => {
 // ══════════════════════════════════════════
 // FORMSPREE SUBMIT
 // ══════════════════════════════════════════
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
+document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const btn = document.getElementById('submitBtn');
   const successBox = document.getElementById('formSuccess');
   const errorBox = document.getElementById('formError');
 
-  // Update language field
-  document.getElementById('formLang').value = currentLang;
+  const vorname   = this.vorname   ? this.vorname.value   : '';
+  const nachname  = this.nachname  ? this.nachname.value  : '';
+  const telefon   = this.telefon   ? this.telefon.value   : '';
+  const email     = this.email     ? this.email.value     : '';
+  const klasse    = this.klasse    ? this.klasse.value    : '';
+  const nachricht = this.nachricht ? this.nachricht.value : '';
 
-  // Loading state
-  btn.disabled = true;
-  btn.textContent = '⏳ Wird gesendet...';
-  btn.style.background = '#5a9bd4';
-  successBox.style.display = 'none';
+  const body =
+    'Vorname: ' + vorname + '\n' +
+    'Nachname: ' + nachname + '\n' +
+    'Telefon: ' + telefon + '\n' +
+    'E-Mail: ' + email + '\n' +
+    'Gewuenschte Klasse: ' + klasse + '\n' +
+    'Nachricht: ' + nachricht;
+
+  const mailtoLink =
+    'mailto:fahrschulenazar@gmx.de' +
+    '?subject=' + encodeURIComponent('Neue Anfrage - Fahrschule Nazar') +
+    '&body=' + encodeURIComponent(body);
+
+  window.location.href = mailtoLink;
+
+  successBox.innerHTML = translations[currentLang]['form.success'] || 'Danke! Dein E-Mail-Programm wird geoeffnet.';
+  successBox.style.display = 'block';
   errorBox.style.display = 'none';
-
-  try {
-    const data = new FormData(this);
-    const res = await fetch(this.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (res.ok) {
-      successBox.innerHTML = translations[currentLang]['form.success'] || '✓ Danke! Wir melden uns bald.';
-      successBox.style.display = 'block';
-      this.reset();
-      btn.textContent = translations[currentLang]['form.btn'] || 'Rückruf anfordern →';
-      btn.style.background = '';
-    } else {
-      throw new Error('Server error');
-    }
-  } catch (err) {
-    errorBox.innerHTML = translations[currentLang]['form.error'] || '⚠ Fehler. Bitte ruf uns an.';
-    errorBox.style.display = 'block';
-    btn.textContent = translations[currentLang]['form.btn'] || 'Rückruf anfordern →';
-    btn.style.background = '';
-  }
-
-  btn.disabled = false;
+  this.reset();
 });
 
 // ══════════════════════════════════════════

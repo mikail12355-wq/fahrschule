@@ -969,7 +969,7 @@ document.addEventListener('click', e => {
   }
 
 // ── Form submit (Formspree) ──────────────────────────────────────────────────
-  document.getElementById('anmeldung-form').addEventListener('submit', async function(e) {
+  document.getElementById('anmeldung-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const f = this;
@@ -1076,31 +1076,38 @@ document.addEventListener('click', e => {
       Erweiterungen: erweiterungen,
     };
 
-    try {
-      const res = await fetch('https://formspree.io/f/xrejrzgp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+    const body =
+      'Vorname: ' + formData.Vorname + '\n' +
+      'Nachname: ' + formData.Nachname + '\n' +
+      'Geschlecht: ' + formData.Geschlecht + '\n' +
+      'Geburtsdatum: ' + formData.Geburtsdatum + '\n' +
+      'Geburtsort: ' + formData.Geburtsort + '\n' +
+      'Staatsangehoerigkeit: ' + formData.Staatsangehoerigkeit + '\n' +
+      'Sprache: ' + formData.Sprache + '\n' +
+      'Ausweisnummer: ' + formData.Ausweisnummer + '\n' +
+      'Mobilnummer: ' + formData.Mobilnummer + '\n' +
+      'Festnetz: ' + formData.Festnetz + '\n' +
+      'E-Mail: ' + formData.Email + '\n' +
+      'Adresse: ' + formData.Strasse + '\n' +
+      'PLZ / Ort: ' + formData.PLZ_Ort + '\n' +
+      'Sehhilfe: ' + formData.Sehhilfe + '\n' +
+      'Fuehrerscheinklassen: ' + formData.Fuehrerscheinklassen + '\n' +
+      'Erweiterungen: ' + formData.Erweiterungen;
 
-      if (res.ok) {
-        btn.innerHTML = '✅ &nbsp; Erfolgreich gesendet!';
-        btn.style.background = '#22a85c';
-        const successBox = document.getElementById('success-box');
-        successBox.style.display = 'block';
-        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        f.reset();
-        clearErrors(f);
-      } else {
-        const data = await res.json();
-        throw new Error(data.error || 'Serverfehler');
-      }
-    } catch (err) {
-      btn.disabled = false;
-      btn.innerHTML = originalText;
-      btn.style.background = '';
-      alert('Fehler beim Senden. Bitte ruf uns direkt an: 030 / 629 013 31');
-    }
+    const mailtoLink =
+      'mailto:fahrschulenazar@gmx.de' +
+      '?subject=' + encodeURIComponent(formData._subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailtoLink;
+
+    btn.innerHTML = '✅ &nbsp; E-Mail-Programm wird geöffnet!';
+    btn.style.background = '#22a85c';
+    const successBox = document.getElementById('success-box');
+    successBox.style.display = 'block';
+    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    f.reset();
+    clearErrors(f);
   });
 
   // ── Live-Fehlerbereinigung: Rot-Markierung entfernen sobald Feld ausgefüllt ──
