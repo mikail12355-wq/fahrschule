@@ -276,9 +276,10 @@
     position: relative; z-index: 1;
     width: 100%;
     text-align: center;
-    padding-top: clamp(48px, 5vw, 56px);
+    padding-top: 48px;
   }
   .wechsler-icon { font-size: 36px; margin-bottom: 10px; }
+  @media (min-width: 769px) { .wechsler-block { padding-top: 24px; } }
   .wechsler-title {
     font-size: clamp(18px, 3vw, 28px);
     font-weight: 800; color: #fff;
